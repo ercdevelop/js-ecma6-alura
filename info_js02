@@ -1,0 +1,58 @@
+/**
+Esse capito vai separar as responsabilidades utilizando o MVC
+Ecma Script 6 melhorou a utilização do paradigma orientado a objetos
+Criar abstração do codigo anterior
+	
+	- convensão utilizada para indicar que esse atributo é privado
+            this._data = data;
+	- Object.freeze(this) - Congela as propriedades do objetos -shallow
+			
+	- let garante um escopo: let teste
+
+	- var não garante escopo: var teste
+
+**/
+
+class Negociacao {
+	//é aqui que definimos os atributos
+	// de uma classe	
+	   constructor(data, quantidade, valor){
+		   // convensão utilizada para indicar que 
+		   // esse atributo é privado
+            this._data = data;
+            this._quantidade = quantidade;
+            this._valor = valor;
+			//Congela as propriedades do objetos
+			// Shallow freeze, não é deep freeze
+			// só se congela as propriedades do proprio ojetos
+			// date é um objeto e as propriedades de date não
+			//são congeladas
+            Object.freeze(this);
+        }
+		
+		getData(){
+			return this._data
+		}
+		
+			getData(){
+			return new Date(this._data.getTime());
+		}
+	
+}
+
+// Programação defensiva
+
+//TESTES na index
+        <scritpt>
+		
+		let hoje =  new Date();
+
+        let n1 = new Negociacao(new Date(), 5, 120.5);
+        
+        console.log(n1.data);
+
+        hoje.setDate(30);
+
+        
+        console.log(n1.data); </scritp>
+

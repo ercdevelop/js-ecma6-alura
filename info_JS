@@ -1,0 +1,102 @@
+/**
+Esse exemplo é relacionado as velhas praticas do js
+O ideal é separar as regras de negocio da parte visual
+Realizar o padrão MVC
+
+**/
+
+// Elementos do DOM
+// document.querySelector -> seletor que busca elementos do CSS -> elemento do DOM que busca elemento do CC
+// document.createElement('tr'); - cria elementos dinamicamente dentro 
+var campos = [
+
+    document.querySelector('#data'),
+    document.querySelector('#quantidade'),
+    document.querySelector('#valor')
+    
+];
+
+// busca dentro da tag <table> o elemento <tbody>
+// fazendo uma especie de cach
+var tbody = document.querySelector('table tbody')
+
+// essa função serve para criar o evento do botao submit
+-- document.querySelector('.form').addEventListner('submit', function(event){
+	
+		//evita que o 
+		event.preventDefault();
+		//cria dinamicamente o form e varre cada elemento do array 'campos' 
+		// 
+		var tr = document.createElement('tr');
+		campos.forEach(function(campo){
+			/**
+				Similar a isso
+				for(campo campo: campos) {
+					
+				}
+			
+			**/
+	 		// cria coluna 'td' dinamicamente a coluna 
+			// que não está dentro do array
+			var td = documento.createElement('td');
+			td.textContent = campo.value;
+			tr.appendChild(td);
+			
+		));
+		
+		// vai colocar <tr> dentro do <tbody> - essa ação finaliza a ação de incluir
+		tbody.appendChild('tr')
+		
+		// zera os elementos
+		
+		campos[0].value = '';
+        campos[1].value = 0;
+        campos[2].value = 1;
+
+});
+
+
+--varrer cada elemento 'tr' - 
+
+
+// Criar o modelo MVC
+
+
+var campos = [
+
+    document.querySelector('#data'),
+    document.querySelector('#quantidade'),
+    document.querySelector('#valor')
+    
+];
+
+
+var tbody = document.querySelector('table tbody')
+
+document.querySelector('.form').addEventListener('submit',function(event){
+
+    event.preventDefault();
+
+  var tr = document.createElement('tr');
+  campos.forEach(function(campo){
+
+         var td = document.createElement('td');
+         td.textContent = campo.value;
+         tr.appendChild(td);
+
+  });
+
+    var tdVol = document.createElement('td') ;
+        tdVol.textContent = campos[1].value * campos[2].value; 
+        tr.appendChild(tdVol);
+
+        tbody.appendChild(tr);
+
+        campos[0].value = '';
+        campos[1].value = 0;
+        campos[2].value = 1;
+
+});
+
+
+

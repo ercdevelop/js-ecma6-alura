@@ -1,0 +1,56 @@
+
+
+/** Chamamos o event.preventDefault(). Quando submetemos o formulário, se não cancelamos o 
+comportamento padrão do mesmo, ele será recarregado. Com o event.preventDefault(), 
+a controller cancelará a submissão do formulário para poder capturar os dados da 
+negociação e incluir na lista
+
+**/
+// Funções DOM
+/**
+document.querySelector();
+
+podemos atribuir uma declaração a $ -> utilizado no JQuery
+.bind(document) é necessário porque precisa fazer a associação de 
+document para $
+
+Ex.:
+
+let $ = document.querySelector.bind(document);
+
+
+**/
+
+// Evitar percorrer o DOM
+/**
+colocar as instâncias no construtor
+
+ constructor(data, quantidade, valor){
+            this._data = new Date(data.getTime());
+            this._quantidade = quantidade;
+            this._valor = valor;
+            Object.freeze(this);
+        }
+
+
+**/
+
+//fazer a conversão de uma string para uma função Data
+/**
+Para descobrir o tipo:
+console.log(TypeOf(this._data.value));
+
+String para Date
+
+        //com split
+        //let data = new Date(this._inputData.value.split('-'));
+
+        //com expressão regular
+        let data = new Date(this._inputData.value.replace(/-/g,','));
+		
+		
+
+
+
+
+**/
