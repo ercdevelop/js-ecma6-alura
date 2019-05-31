@@ -1,5 +1,3 @@
-
-
 /** Chamamos o event.preventDefault(). Quando submetemos o formulário, se não cancelamos o 
 comportamento padrão do mesmo, ele será recarregado. Com o event.preventDefault(), 
 a controller cancelará a submissão do formulário para poder capturar os dados da 
@@ -18,7 +16,6 @@ Ex.:
 
 let $ = document.querySelector.bind(document);
 
-
 **/
 
 // Evitar percorrer o DOM
@@ -32,25 +29,35 @@ colocar as instâncias no construtor
             Object.freeze(this);
         }
 
-
 **/
 
 //fazer a conversão de uma string para uma função Data
 /**
 Para descobrir o tipo:
 console.log(TypeOf(this._data.value));
-
 String para Date
 
         //com split
         //let data = new Date(this._inputData.value.split('-'));
 
         //com expressão regular
-        let data = new Date(this._inputData.value.replace(/-/g,','));
-		
-		
+        let data = new Date(this._inputData.value.replace(/-/g,','));		
+**/
 
+/**
+1 - converte em array com expressao regular'
 
+let data = new Date(dataInformada.value.split('-'))
+
+2 - ordena os elementos separados
+
+let data = new Date(...dataInformada.value.split('-').
+					map(function(numero, indice){
+				
+	
+	}
+
+));
 
 
 **/

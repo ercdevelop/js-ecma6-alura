@@ -15,14 +15,20 @@ class NegociacaoController {
     adiciona(event){
         event.preventDefault();
         
-        //com split
-        //let data = new Date(this._inputData.value.split('-'));
+        let dataRpl = new Date(...this._inputData.
+            value.split('-').map(function(numero, indice){
+                if(indice ==1 ){
+                        return numero -1;
+                }
+                return numero;
 
-        //com expressão regular
-        let data = new Date(this._inputData.value.replace(/-/g,','));
+            })
+        );
 
-        console.log(data);
+        console.log(dataRpl);
+
     }
         
+ 
 
 }
