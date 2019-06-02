@@ -2,7 +2,7 @@ class NegociacaoController {
 
     constructor(){
         
-         let $ = document.querySelector.bind(document);
+     let $ = document.querySelector.bind(document);
          
         this._inputData = $('#data');
         this._inputQtde = $('#quantidade');
@@ -12,7 +12,7 @@ class NegociacaoController {
     }
 
 
-    adiciona(event){
+    adiciona2(event){
         event.preventDefault();
         
         let dataRpl = new Date(...this._inputData.
@@ -28,7 +28,22 @@ class NegociacaoController {
         console.log(dataRpl);
 
     }
-        
- 
+         
+
+    adiciona(event){
+        event.preventDefault();
+
+        let dataTratada = new Date(...this._inputData.value
+                                        .split('-')
+                                        .map((numero,indice) =>
+                                          numero - indice%2 )
+                                          );
+
+
+        let negociacao = new Negociacao(dataTratada,this._inputQtde,this._inputvalor);
+
+        console.log(negociacao.data);
+
+    }
 
 }

@@ -52,12 +52,11 @@ let data = new Date(dataInformada.value.split('-'))
 2 - ordena os elementos separados
 
 let data = new Date(...dataInformada.value.split('-').
-					map(function(numero, indice){
-				
+					map(function(numero, indice){ =>
+					
 	
 	}
 
 ));
-
 
 **/
